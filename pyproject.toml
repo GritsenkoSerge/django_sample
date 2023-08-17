@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "fructus-temporum-task"
+name = "django-sample"
 version = "0.1.0"
-description = "fructus temporum test task"
+description = "Django sample project"
 authors = ["Сергей Гриценко <gritsenko.serge.2013@yandex.ru>"]
-license = "MIT"
+license = "MIT License"
 readme = "README.md"
-packages = [{include = "fructus_temporum_task"}]
+packages = [{include = "django_sample"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -15,8 +15,6 @@ psycopg2 = "^2.9.7"
 djoser = "^2.2.0"
 drf-spectacular = "^0.26.4"
 djangorestframework = "^3.14.0"
-beautifulsoup4 = "^4.12.2"
-types-requests = "^2.31.0.2"
 gunicorn = "^21.2.0"
 
 [tool.poetry.group.dev.dependencies]
@@ -56,14 +54,14 @@ skip-magic-trailing-comma=false
 line-length=89
 
 [tool.flake8]
-ignore=['W503', 'CCE001']
+ignore=['WPS100']
 exclude=['.git', 'env/', 'venv/', 'temp/', '*.md', '__pycache__/']
 max-cognitive-complexity=10
 max-line-length=89
 class_attributes_order=['field', 'meta_class', 'nested_class', 'magic_method', 'property_method', 'static_method', 'class_method', 'method', 'private_method']
 
 [tool.isort]
-known_first_party=['users', 'api', 'core', 'bookmarks']
+known_first_party=['users', 'api', 'core']
 profile='black'
 
 [tool.mypy]

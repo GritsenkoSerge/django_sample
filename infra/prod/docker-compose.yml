@@ -1,12 +1,12 @@
 version: '3.9'
-name: 'bookmarks_prod'
+name: 'django_sample_prod'
 
 services:
   postgres:
     image: postgres:14
     volumes:
       - postgres_value:/var/lib/postgresql/data
-      - ../pg-initdb:/docker-entrypoint-initdb.d
+      - ../../pg-initdb:/docker-entrypoint-initdb.d
     env_file:
       - ./.env
     healthcheck:
@@ -24,7 +24,7 @@ services:
 
   backend:
     build:
-      context: ../../backend/
+      context: ../../
     depends_on:
       postgres:
         condition: service_healthy
@@ -42,8 +42,8 @@ services:
     depends_on:
       - backend
     volumes:
-      - ./data/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./data/nginx/configs:/etc/nginx/conf.d:ro
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/configs:/etc/nginx/conf.d:ro
       - static_value:/usr/share/nginx/html/static
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
 

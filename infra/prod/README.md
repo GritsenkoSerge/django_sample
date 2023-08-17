@@ -2,11 +2,11 @@
 
 ### Клонировать репозиторий
 ```
-git clone https://github.com/GritsenkoSerge/fructus_temporum_task
+git clone https://github.com/GritsenkoSerge/django_sample
 ```
-### Перейти в директорию fructus_temporum_task/infra/prod
+### Перейти в директорию django_sample/infra/prod
 ```
-cd fructus_temporum_task/infra/prod
+cd django_sample/infra/prod
 ```
 ### Скопировать файл `.env.example` в `.env`, при необходимости задать значения переменным
 ```
@@ -19,9 +19,9 @@ cp .env.example .env
 | SECRET_KEY | None | `from django.core.management.utils import get_random_secret_key; get_random_secret_key()` |
 | ALLOWED_HOSTS | * | Список разрешенных хостов, указанных через пробел |
 | CSRF_TRUSTED_ORIGINS | | Список доверенных источников для небезопасных запросов |
-| POSTGRES_DB | bookmarks_db | Имя базы данных |
-| POSTGRES_USER | bookmarks_user | Имя пользователя (владельца) базы данных |
-| POSTGRES_PASSWORD | bookmarks_pass | Пароль пользователя (владельца) базы данных |
+| POSTGRES_DB | postgres_db | Имя базы данных |
+| POSTGRES_USER | postgres_user | Имя пользователя (владельца) базы данных |
+| POSTGRES_PASSWORD | postgres_pass | Пароль пользователя (владельца) базы данных |
 | POSTGRES_HOST | postgres | ip-адрес хоста, на котором находится база данных |
 | POSTGRES_PORT | 5432 | порт, который слушает база данных |
 

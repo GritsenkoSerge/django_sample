@@ -5,24 +5,24 @@ lint:
 
 .PHONY: po
 po:
-	python backend/manage.py makemessages --no-wrap --locale=en --locale=ru -i=*env
+	python manage.py makemessages --no-wrap --locale=en --locale=ru -i=*env
 
 .PHONY: mo
 mo:
-	python backend/manage.py compilemessages --locale=en --locale=ru -i=*env
+	python manage.py compilemessages --locale=en --locale=ru -i=*env
 
 .PHONY: mm
 mm:
-	python backend/manage.py makemigrations
+	python manage.py makemigrations
 
 .PHONY: mg
 mg:
-	python backend/manage.py migrate
+	python manage.py migrate
 
 .PHONY: csu
 csu:
-	python backend/manage.py createsuperuser
+	python manage.py createsuperuser
 
 .PHONY: run
 run:
-	python backend/manage.py runserver
+	python manage.py runserver
